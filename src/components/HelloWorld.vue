@@ -1,96 +1,45 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
+  <v-row class="login center">
+    <v-col sm="5">
+      <v-col cols="12" sm="12">
+        <v-img src="../assets/logo.png" alt="" contain class="mt-16"></v-img>
       </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+    </v-col>
+    <v-col cols="12" sm="7" class="center">
+      <v-row align="center" justify="center">
+        <v-col cols="6" sm="12" md="8">
+          <v-card class="elevation-12">
+            <!-- LOGIN CARD TOOLBAR -->
+            <v-toolbar color="primary" dark flat>
+              <v-toolbar-title>
+                <v-icon>mdi-login</v-icon>
+                Login
+              </v-toolbar-title>
+              <v-spacer />
+            </v-toolbar>
+            <!-- LOGIN CARD TOOLBAR -->
+            <!-- LOGIN INPUT FORM -->
+            <v-card-text>
+              <v-form @submit.prevent="authUser">
+                <v-text-field outlined v-model="username" label="Username" color="secondary" name="login"
+                  prepend-icon="mdi-account" type="text" />
+                <v-text-field outlined v-model="password" id="password" label="Password" color="secondary" name="password"
+                  prepend-icon="mdi-lock" type="password" @keypress.enter="authUser" />
+              </v-form>
+            </v-card-text>
+            <!-- LOGIN INPUT FORM -->
+            <!-- LOGIN BUTTONS -->
+            <v-card-actions>
+              <v-spacer />
+              <v-btn @click="authUser" color="secondary">Enter</v-btn>
+            </v-card-actions>
+            <!-- LOGIN BUTTONS -->
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-row>
 </template>
-
 <script>
   export default {
     name: 'HelloWorld',

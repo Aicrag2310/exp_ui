@@ -75,8 +75,8 @@
             <v-btn text color="var(--v-primary-base)">Configuración</v-btn>
         </v-list-item-title>
     </v-list-item>
-    <v-list-item to="/login">
-        <v-list-item-avatar>
+    <v-list-item class="px-2" to="/login">
+      <v-list-item-avatar>
             <v-icon color="var(--v-primary-base)">mdi-exit-to-app</v-icon>
         </v-list-item-avatar>
         <v-list-item-title>

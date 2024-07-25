@@ -5,13 +5,12 @@
         <v-img src="../assets/logo.png" alt="" contain class="mt-16"></v-img>
       </v-col>
     </v-col>
-    <v-col cols="12" sm="7" class="center">
+    <v-col cols="12" sm="7" class="center mt-15">
       <v-row align="center" justify="center">
         <v-col cols="6" sm="12" md="8">
           <v-card class="elevation-12">
-            <!-- LOGIN CARD TOOLBAR -->
             <v-toolbar color="primary" dark flat>
-              <v-toolbar-title>
+              <v-toolbar-title color="red">
                 <v-icon>mdi-login</v-icon>
                 Login
               </v-toolbar-title>
@@ -40,6 +39,7 @@
     </v-col>
   </v-row>
 </template>
+
 <script>
   export default {
     name: 'HelloWorld',
@@ -98,3 +98,29 @@
     }),
   }
 </script>
+
+<style scoped>
+.admin-text {
+  z-index: 1;
+}
+
+h2 {
+  letter-spacing: 0.25rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .login {
+    flex-direction: row
+
+;
+  }
+}
+</style>
